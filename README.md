@@ -1,16 +1,12 @@
-# Infisical Design
+# Infisical design
 
-The Infisical design system — colors, typography, and components in one place.
+colors, type, and components in one spot
 
-## What's in here
+## What's here
 
-- **`showcase.html`** — a webpage that shows every component. Open it to see what the design system looks like.
-- **`design.md`** — the rules and tokens (colors, fonts, spacing). This is the source of truth.
+- `showcase.html` - open it in a browser to see all the components
+- `design.md` - the actual tokens and rules
 
-## How to use it in a project
+## Using it
 
-Share `design.md` with whoever is building (designer, developer, or an AI tool). It contains everything they need to match the Infisical look.
-
-## How to view it
-
-Double-click `showcase.html`. It opens in your browser. That's it.
+hand `design.md` to whoever's building (person or ai)

@@ -190,6 +190,169 @@ components:
     pixelSize: 8px
     stepMs: 5ms
     trigger: "IntersectionObserver, paints in once on first scroll into view, then stays filled"
+  toggle:
+    width: 44px
+    height: 22px
+    border: "1px solid {colors.border}"
+    rounded: "{rounded.none}"
+    knobInset: 2px
+    knobBackground: "{colors.void}"
+    onBackground: "{colors.void}"
+    onKnobBackground: "{colors.volt}"
+    motion: "knob slides on cubic-bezier(0.34, 1.56, 0.64, 1) at 320ms; knob squashes wider on :active"
+  checkbox:
+    width: 18px
+    height: 18px
+    border: "1px solid {colors.border}"
+    rounded: "{rounded.none}"
+    checkedBackground: "{colors.void}"
+    checkStroke: "{colors.volt}"
+    checkStrokeWidth: 1.8
+    checkLinecap: round
+    motion: "stroke-dashoffset draw-in at 220ms; box :active scale(0.92)"
+  radio:
+    width: 16px
+    height: 16px
+    border: "1px solid {colors.border}"
+    rounded: "{rounded.none}"
+    dotSize: 6px
+    dotBackground: "{colors.void}"
+    motion: "dot scales 0.4 → 1 on cubic-bezier(0.34, 1.56, 0.64, 1) at 240ms"
+  select:
+    backgroundColor: transparent
+    textColor: "{colors.void}"
+    border: "1px solid {colors.border}"
+    typography: "{typography.body-sm}"
+    rounded: "{rounded.none}"
+    height: 38px
+    padding: "0 12px"
+    appearance: none
+    chevron: "10x10, stroke 1.4, currentColor, nudges down 1px on hover"
+  segmented:
+    border: "1px solid {colors.border}"
+    rounded: "{rounded.none}"
+    height: 36px
+    itemPadding: "0 16px"
+    itemTypography: "{typography.body-sm}"
+    activeBackground: "{colors.void}"
+    activeTextColor: "{colors.bg}"
+    indicator: "single shared element animated via JS from active button's bounding rect; transform + width on {motion.ease-out}"
+  tabs:
+    border: "0 0 1px 0 solid {colors.border}"
+    gap: "{spacing.lg}"
+    itemPadding: "10px 0"
+    itemTypography: "{typography.body-sm}"
+    activeTextColor: "{colors.void}"
+    indicator: "1px hairline at bottom, transform + width animated from active tab's bounding rect"
+  slider:
+    height: 1px
+    track: "{colors.border}"
+    thumbWidth: 12px
+    thumbHeight: 18px
+    thumbBackground: "{colors.void}"
+    thumbRadius: 0
+  progress:
+    height: 6px
+    track: "{colors.tint-strong}"
+    bar: "{colors.void}"
+    voltVariant: "bar becomes {colors.volt}"
+    transition: "width {motion.dur-slow} {motion.ease-out}"
+  badge:
+    border: "1px solid {colors.border}"
+    background: transparent
+    textColor: "{colors.text-subtle}"
+    typography: "{typography.label} at 11px"
+    padding: "3px 8px"
+    rounded: "{rounded.none}"
+    variants:
+      solid: "background {colors.void}, text {colors.bg}, border {colors.void}"
+      volt: "background {colors.volt}, text {colors.void}, border {colors.volt}"
+      green: "text and border {colors.accent-green}"
+      error: "text and border {colors.error}"
+  avatar:
+    size: 32px
+    background: "{colors.void}"
+    textColor: "{colors.bg}"
+    typography: "{typography.label} at 11px"
+    rounded: "{rounded.none}"
+    stackOverlap: -8px
+    stackRing: "2px solid {colors.bg}"
+  tooltip:
+    background: "{colors.void}"
+    textColor: "{colors.bg}"
+    typography: "{typography.label} at 11px"
+    padding: "6px 10px"
+    rounded: "{rounded.none}"
+    offset: 8px
+    motion: "fade + 4px translate on {motion.dur-fast} {motion.ease-out}; trigger-anchored transform-origin"
+  breadcrumb:
+    typography: "{typography.body-sm} at weight 500"
+    color: "{colors.text-subtle}"
+    sepColor: "{colors.text-muted}"
+    currentColor: "{colors.void}"
+    gap: 10px
+  modal:
+    background: "{colors.bg}"
+    border: "1px solid {colors.void}"
+    rounded: "{rounded.none}"
+    width: "min(440px, 100%)"
+    headerPadding: "18px 20px 16px"
+    bodyPadding: "20px"
+    footerPadding: "14px 20px"
+    sectionDivider: "1px solid {colors.border}"
+    backdrop: "rgba(17,17,17,0.5) with 2px blur"
+    motion: "drops 8px and scales 0.97 → 1 on cubic-bezier(0.34, 1.2, 0.64, 1) at 360ms; transform-origin center"
+    dismiss: "escape, click backdrop, explicit cancel; focus returns to trigger"
+  drawer:
+    background: "{colors.bg}"
+    border: "1px solid {colors.void}"
+    rounded: "{rounded.none}"
+    width: "min(560px, calc(100% - 32px))"
+    position: "bottom-anchored, centered horizontally"
+    maxHeight: "calc(100vh - 64px)"
+    grip: "48x3 hairline at {colors.border}, becomes {colors.void} on hover, cursor: grab"
+    motion: "translateY 100% → 0 on {motion.ease-drawer} at 420ms"
+    drag: "pointer drag on grip; release past 40% of drawer height dismisses with continued spring; otherwise snaps back"
+  command-palette:
+    background: "{colors.bg}"
+    border: "1px solid {colors.void}"
+    rounded: "{rounded.none}"
+    width: "min(520px, 100%)"
+    searchPadding: "14px 16px"
+    itemPadding: "10px 16px"
+    sectionDivider: "1px solid {colors.border}"
+    groupLabel: "{typography.label} at 10px, {colors.text-subtle}"
+    activeBackground: "{colors.void}"
+    activeTextColor: "{colors.bg}"
+    activeAccent: "3px {colors.volt} strip on left edge"
+    keyboard: "↑/↓ navigate, ↵ select, esc close, ⌘K/⌃K toggle"
+  toast:
+    background: "{colors.bg-dark}"
+    border: "1px solid {colors.border-dark}"
+    textColor: "{colors.text-on-dark}"
+    rounded: "{rounded.none}"
+    padding: "14px 16px 14px 18px"
+    minWidth: 320px
+    severityStrip: "3px left-edge strip; {colors.volt} for success, {colors.accent-deep-green} for info, {colors.error} for error"
+    countdown: "1px progress bar at bottom, scaleX 1 → 0 over 6s linear"
+    motion: "enters from right with 24px translate + opacity on {motion.ease-drawer} at 420ms; exit reverses at 240ms"
+    stack: "bottom-right portal, newest on top, max 3 visible, older toasts scale 0.94/0.88"
+    dismiss: "auto at 6s, manual via × button, swipe-right gesture"
+  accordion:
+    border: "1px solid {colors.border} top + between + bottom"
+    triggerPadding: "18px 16px"
+    triggerTypography: "{typography.body-md} at weight 500"
+    openBackground: "{colors.bg-page}"
+    sign: "14x14 cell with 1.5px crossed bars; vertical bar rotates 90deg on open via cubic-bezier(0.34, 1.2, 0.64, 1)"
+    panel: "height animated from 0 → measured content height on {motion.ease-drawer} at 320ms"
+    panelInner: "fades + 4px translate with 80ms delay so content appears as panel expands"
+  skeleton:
+    background: "{colors.tint-strong}"
+    animation: "opacity pulse 1 → 0.5 → 1 at 1.6s {motion.ease-in-out} infinite"
+    height: 10px
+    variants:
+      lg: 16px
+      xl: 28px
 ---
 
 # Infisical
@@ -227,6 +390,8 @@ Apply the **One-Family Rule**: Alliance No.2 plus JetBrains Mono is the complete
 Apply the **Uppercase Restraint Rule**: `text-transform: uppercase` is only valid on JetBrains Mono. Uppercase Alliance breaks the letterforms. Headings, buttons, and body remain sentence case.
 
 Apply the **Token-Sized Type Rule**: never set `font-size` by hand. If the size needed is not in the scale, add the token first, then use it.
+
+Apply the **Navbar Sans Rule**: navbar brand text and nav links use Alliance No.2 in sentence case at `body-sm` or `body-md`, never the mono `label` role. Uppercase mono is reserved for eyebrows, section labels, table headers, badges, and metadata — applying it to top-level navigation makes the chrome read as code, not product. Brand wordmarks may go slightly heavier (weight 500–600) but stay in Alliance.
 
 ## Layout
 
@@ -500,6 +665,54 @@ Two snippets that prose alone cannot carry: the pixel-dither button hover, and t
   document.querySelectorAll('[data-cipher]').forEach((el) => io.observe(el));
 })();
 ```
+
+### Controls
+
+Eight control primitives carry every input state in the system: `toggle`, `checkbox`, `radio`, `select`, `segmented`, `tabs`, `slider`, `progress`. All hold the **Sharp-Corner Rule** and the **Hairline Rule** — no radii, no shadows, single-pixel borders.
+
+**Toggle.** A 44×22 rectangle with a 1px `border`. The knob is an inset 16×16 `void` square that slides on `cubic-bezier(0.34, 1.56, 0.64, 1)` at 320ms. On `aria-checked="true"`, the track fills `void` and the knob switches to `volt` — a charged moment that earns the One-Volt allowance. The knob squashes ~2px wider on `:active` and shifts back toward the trailing edge for tactile feedback. Track is the only place Volt appears on a toggle; never tint the track itself.
+
+**Checkbox.** An 18×18 box with a 1px `border`. The check mark is an SVG path drawn at `stroke-width: 1.8` with `linecap: round`, animated via `stroke-dashoffset` from 14 to 0 over 220ms after the fill switches to `void`. Apply the **Optical-Centering Rule**: the geometric center of a check-mark path sits visually right-heavy because the long up-right stroke carries more weight. Shift the path left by ~0.5 viewBox units and pull the SVG element 1px right with margin to compensate. On `:active`, the whole box takes `scale(0.92)`.
+
+**Radio.** A 16×16 box (not a circle — sharp corners apply) with a 6×6 `void` dot inside. The dot scales 0.4 → 1 on the same spring as the toggle knob. Group selection follows standard radio semantics; only one is checked per group.
+
+**Select.** A 38px-tall button rendered with `appearance: none` so cross-browser height stays consistent. Holds 1px `border`, transparent background, 12px horizontal padding, no left padding adjustment for the chevron. The 10×10 chevron nudges down 1px on hover to suggest "drops down." Placeholder rows use `text-subtle`; values use `void`. The popup list itself is a `command-palette` when search is needed and a positioned dropdown when not — never a native `<select>` element in product chrome.
+
+**Segmented.** A bordered inline-flex of equal-height buttons separated by 1px hairlines. The active button shows the `void` fill / `bg` text inversion, but the fill comes from a **single shared indicator element** positioned absolutely behind the buttons, not from a per-button background. On selection change, the indicator's `transform: translateX()` and `width` animate to the newly active button's bounding rect on `dur-slow` with `ease-out`. Apply the **Sliding-Indicator Rule** to tabs and segmented controls alike: one element, measured from the DOM with `getBoundingClientRect()`, animated with `transform` + `width`. Never animate per-button background-color cross-fades — they look like a flicker, not a slide.
+
+**Tabs.** A flex row with a 1px bottom `border`. Active tab takes `void` text; inactive tabs take `text-subtle`. The active underline is a 1px shared indicator pinned to the bottom hairline, animated under the Sliding-Indicator Rule above. Tabs read content-width; no equal-distribution unless the container demands it.
+
+**Slider.** A 1px hairline track in `border`, a 12×18 sharp `void` thumb (no border-radius, no thumb shadow). Cross-browser thumb rendering requires both `::-webkit-slider-thumb` and `::-moz-range-thumb` blocks. The track does not fill behind the thumb — value is read from the thumb position, not from a colored progress arc.
+
+**Progress.** A 6px track in `tint-strong` with a `void` bar; width animates on `dur-slow` `ease-out`. The Volt variant exists for the single most-important progress moment per view (key generation, encryption, deploy). Apply the **One-Volt Rule** here too: most progress bars stay `void`; promote to Volt only when the bar itself is the story.
+
+### Identity & metadata
+
+**Badge.** A 1px-bordered pill (still sharp-cornered) with `label` typography at 11px. Default is a transparent background, `text-subtle`, `border` border. The four variants — `solid`, `volt`, `green`, `error` — each set background, text, and border in one move so the badge always reads as a single token. The optional 6×6 `dot` inside picks up `currentColor`, useful for status badges (`Live`, `Failed`, `Pending`). Badges never gain a third color beyond their variant.
+
+**Avatar.** A 32×32 `void` square with `bg`-colored mono initials at `label` size. Variants: `volt` (yellow background, void text), `outline` (transparent, void text, hairline border). Stacks render as inline-flex with `-8px` margin-left overlap; each avatar in a stack gets a 2px `bg` outline to read as separated. Overflow stacks end with a `+N` count avatar in the default style.
+
+**Breadcrumb.** A flex row of Alliance `body-sm` weight-500 links separated by `/` characters in `text-muted`. Trail links are `text-subtle`, current page is `void`. Apply the **Breadcrumb Sans Rule** (a corollary of Navbar Sans): breadcrumbs never adopt the mono `label` treatment — they are wayfinding for product, not metadata, and the mono uppercase makes them read as code paths.
+
+**Tooltip.** A `void`-background pill with `bg` text in `label` 11px, 6×10 padding, 8px offset from trigger. Fades in with a 4px upward translate on `dur-fast` `ease-out`. Apply the **Trigger-Anchored Origin Rule** to tooltips, popovers, and dropdowns: `transform-origin` matches the side of the trigger the surface emerges from (top, bottom, left, right), not center. The triangular pointer is a CSS pseudo-element with `border` triangle hack — no SVG, no shadow.
+
+### Overlays
+
+Four overlay primitives — `modal`, `drawer`, `command-palette`, `toast` — share a portal-based mount, focus return on close, and `body { overflow: hidden }` while open. Each lives at `z-index: 1000+`.
+
+**Modal.** A 440px-max sharp-cornered card with three structural zones separated by hairlines: head (eyebrow label + close button), body (title + content), foot (hint + action row). Drops in with `translateY(8px)` + `scale(0.97)` → identity on `cubic-bezier(0.34, 1.2, 0.64, 1)` at 360ms; backdrop is `rgba(17,17,17,0.5)` with a 2px blur that fades over `dur-base`. Apply the **Modal Center-Origin Rule**: modals keep `transform-origin: center` because they appear in the viewport center, not at a trigger. Esc, backdrop click, and explicit cancel all dismiss; focus returns to the trigger element via stored ref.
+
+**Drawer.** A bottom-anchored sheet (vaul-style), 560px-max, centered horizontally with 16px gutters. Slides up from `translateY(100%)` on `ease-drawer` (`cubic-bezier(0.32, 0.72, 0, 1)`) at 420ms — a deeper, dampened curve than `ease-out` because the drawer travels further than a modal. A 48×3 hairline grip at the top reads as a drag handle (`cursor: grab`); on hover it darkens from `border` to `void`. Apply the **Drag-Dismiss Rule**: pointer drag on the grip translates the drawer in real time (no transition during drag), rubber-bands at the top boundary, and on release past 40% of drawer height continues the dismiss animation; under 40% it springs back. Use the drawer for multi-field forms, settings panels, and any flow that wants more vertical real estate than a modal grants.
+
+**Command palette.** A 520px-max sharp card with a search input at top, grouped result rows, and a keyboard-hint footer. Search rows are 14×16 padded with a 14px search icon left of the input and an `esc` hint right. Result groups carry an uppercase mono `label`-style header (`Actions`, `Routines`, `Navigate`). Each row is a 14px icon glyph + label + `meta` tag in mono. The active row inverts to `void` background, `bg` text, and gains a 3px Volt accent strip on its left edge — the One-Volt allowance for keyboard focus. Apply the **Keyboard-First Rule**: ⌘K / ⌃K toggles globally; ↑/↓ navigates results; ↵ selects; esc closes. Per the Frequency Rule, the palette opens with no fade — it appears instantly, because anyone using it 100+ times a day must not wait.
+
+**Toast.** A dark surface notification, 320px-min, stacked bottom-right in a fixed portal. Carries a 3px severity strip on its left edge (`volt` for success, `accent-deep-green` for info, `error` for error), a mono eyebrow with kind + relative timestamp, and an Alliance body. A 1px progress bar at the bottom counts down via `transform: scaleX(1 → 0)` over 6s linear, then the toast exits to the right with a 24px translate and an opacity fade. Apply the **Toast Stack Rule**: maximum three visible, newest on top, older toasts scale to 0.94 then 0.88 as they get buried. Manual dismiss via `×` button cancels the auto-timer immediately and runs the exit animation. Swipe-right gesture also dismisses on touch. Toasts never carry buttons — they are notifications, not interactions; route any action to the originating surface.
+
+### Feedback
+
+**Accordion.** A vertical list of items separated by 1px hairlines, with the open item taking a `bg-page` wash. Trigger row is a grid of `[24px num | 1fr label | 14px sign]` — the number is a `label`-style "01" mono prefix, the sign is a 14×14 cell holding crossed `void` bars. Apply the **Plus-to-Minus Rule**: the vertical bar of the sign rotates 90° to merge with the horizontal bar on open, using `cubic-bezier(0.34, 1.2, 0.64, 1)` at 320ms — a morph, not a scale-out. The expand uses the **Measured-Height Rule**: read `inner.getBoundingClientRect().height` via JS and animate the panel's `height` property from `0px` to that measured value on `ease-drawer` at 320ms, then set `height: auto` after the transition completes so the open content can resize freely. The `grid-template-rows: 0fr → 1fr` trick is too new and too inconsistent across browsers to rely on. Inner content fades + translates 4px with an 80ms delay so it appears as the panel opens rather than during.
+
+**Skeleton.** A `tint-strong` block that pulses opacity from 1 → 0.5 → 1 on a 1.6s `ease-in-out` infinite loop. Apply the **Skeleton-Pulse Rule**: no shimmer gradient, no animated background-position, no traveling highlight band. Just opacity. The skeleton's job is to hold the row geometry while data loads, not to perform — a shimmer reads as decoration and competes with surrounding content. Three sizes: 10px default, 16px `lg` (titles), 28px `xl` (heading rows or buttons). Group skeletons into a bordered list that mirrors the final layout exactly (avatar block + line stack + status badge + action) so the swap from skeleton to data is geometrically silent.
 
 ## Voice & Content
 
